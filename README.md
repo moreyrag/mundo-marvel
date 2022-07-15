@@ -1,2 +1,2 @@
-# tienda-macotas
-Proyecto Ecommerce Tienda de Productos para Mascotas Curso React Coderhouse
+# mundo-marvel
+Proyecto Ecommerce Tienda de Productos Mundo Marvel Curso React Coderhouse
