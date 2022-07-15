@@ -1,0 +1,8 @@
+.itemdetalle{
+    background: linear-gradient(#cbcdd5, #9198e5);
+    text-align: center;
+    margin-bottom: 0;
+    color: white;
+    min-height: 100vh;
+    min-width: 100%;
+}

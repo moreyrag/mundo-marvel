@@ -1,0 +1,14 @@
+.cartwidget{
+    background-color: primary;
+}
+.carritoImg{
+    width: 30px;
+    height: 30px;
+}
+
+.cantidadArticulos{
+    color: rgb(228, 228, 10);
+    font-weight: bold;
+    margin-left: 0.25rem;
+    margin-right: 1rem;
+}

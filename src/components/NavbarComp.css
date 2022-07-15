@@ -1,0 +1,37 @@
+/*
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgb(228, 228, 10);
+}
+
+.navbar-light .navbar-brand {
+    color:rgb(228, 228, 10);
+} 
+
+.header a{
+    color:white;
+    text-decoration: none;
+}
+*/
+
+.navbar-toggler-icon{
+    background-color: white;
+}
+
+.navA{
+    color: white;
+    text-decoration: none;
+}
+
+.navA hover,
+a:hover,
+a.active,
+.navA .active{
+    color:black;
+    padding-bottom: 0.25rem;
+    border-bottom: 4px solid brown;
+}
+
+.navbar-nav{
+    align-items: center;
+}
