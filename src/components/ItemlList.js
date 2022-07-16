@@ -4,7 +4,6 @@ import Item from './Item';
 import './ItemlList.css';
 
 function ItemlList({productos}) {
-
     return (
         <Container fluid="md">
             <Row className="justify-content-md-center">
