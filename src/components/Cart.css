@@ -1,6 +1,12 @@
-.cartMarvel{
-    background: green;
-    color: red;
+.contenedorCarrito{
+    background: linear-gradient(#cbcdd5, #9198e5);
+    display: flex !important;
+    justify-content: center !important;
     min-height: 100vh;
-    text-align: center;
+    min-width: 100vw;
+}
+
+.mensajeCarritoVacio{
+    display: flex !important;
+    justify-content: center !important;
 }

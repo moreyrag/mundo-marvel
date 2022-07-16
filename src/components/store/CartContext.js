@@ -1,4 +1,4 @@
-import {useState, createContext} from "react";
+import React, {useState, createContext} from "react";
 
 export const CartContext = createContext({})
 const {Provider} = CartContext
@@ -19,16 +19,16 @@ export const CartProvider = ({defaultValue=[], children}) => {
         setCarrito(newCarrito)
     }
 
-    const getTotales = () =>{
+    const getCantidadTotal = () =>{
         let cantidades = carrito.map((item)=>item.cantidad)
-        console.log(cantidades)
+        return cantidades.reduce((total, cantidad) => total + cantidad, 0)
+    }
+
+    const getImporteTotal = () =>{
         let importes = carrito.map((item)=>{
             return (item.cantidad * item.producto.precio)
         })
-        console.log(importes)
-        let totalItems = cantidades.reduce((total, cantidad) => total + cantidad, 0)
-        let importeTotal = importes.reduce((total, importe) => total + importe, 0)
-        return {"totalItems":totalItems, "importeTotal":importeTotal}
+        return importes.reduce((total, importe) => total + importe, 0)
     }
 
 
@@ -63,7 +63,8 @@ export const CartProvider = ({defaultValue=[], children}) => {
         clearCarrito,
         isInCart,
         removeItem,
-        getTotales,
+        getCantidadTotal,
+        getImporteTotal,
         addItemToCart,
         carrito
     }

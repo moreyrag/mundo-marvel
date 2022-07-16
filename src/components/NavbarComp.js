@@ -1,3 +1,4 @@
+import React from 'react';
 import {Container, Nav, Navbar} from 'react-bootstrap';
 import logo from '../assets/logoMarvel.svg';
 import WelcomeComp from './WelcomeComp';

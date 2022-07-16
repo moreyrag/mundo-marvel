@@ -1,5 +1,6 @@
 // Estilo React Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import NavbarComp from './components/NavbarComp';
 import ItemListContainer from './components/ItemListContainer';

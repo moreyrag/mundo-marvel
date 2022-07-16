@@ -1,18 +1,17 @@
 import Card from 'react-bootstrap/Card';
-import { Button, Container, Row, Col} from 'react-bootstrap';
-import ItemDetailContainer from './ItemDetailContainer'
-import { useState } from 'react';
+import { Button, Container, Row} from 'react-bootstrap';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './Item.css'
 
 function Item({producto}) {
-    const [conDetalles, setConDetalles] = useState(false)
     return (
         <Card
             // bg={'primary'}
             key={producto.id}
             // text={'white'}
-            style={{ width: '15rem'}}
+            // {style={{ width: '15rem'}}}
+            style={{ width: '25%'}}
             className="mb-2 mx-2 cardMundoMarvel"
             >
                 <Card.Header>
@@ -28,7 +27,7 @@ function Item({producto}) {
                             <Card.Text className='mt-1 datosStock' size="sm">stock: {producto.stock}</Card.Text>
                         </Row>
                         <Row>
-                            <Link to={`/detalles/${producto.id}`}> <Button size="sm" variant="warning" className='mb-1 mt-2' onClick={()=><ItemDetailContainer/>}>Detalles</Button> </Link>
+                            <Link to={`/detalles/${producto.id}`}> <Button size="sm" variant="warning" className='mb-1 mt-2'>Detalles</Button> </Link>
                         </Row>
                     </Container>
                 </Card.Footer>

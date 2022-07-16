@@ -1,4 +1,4 @@
-import { useState, useContext} from 'react';
+import React, {useState, useContext} from 'react';
 import { Image, Table, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import ItemCount from './ItemCount';
@@ -42,7 +42,10 @@ function ItemDetail({det}) {
             </Table>
             { !mostrarTerminarCompra? 
                 <ItemCount stock={det.stock} initial={cantItem} onAdd={onAddHandler}/>:
-                <Link to="/cart"> <Button size="md" variant="info" className='mb-2 mt-2'>Terminar compra</Button> </Link>
+                <>
+                    <Link to="/cart"> <Button size="md" variant="info" className='mb-2 mt-2 mx-2'>Terminar compra</Button> </Link>
+                    <Link to="/inicio"> <Button size="md" variant="success" className='mb-2 mt-2 mx-2'>Continuar comprando</Button> </Link>
+                </>
             }
         </main>
       );

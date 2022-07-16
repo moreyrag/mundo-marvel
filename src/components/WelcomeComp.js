@@ -1,3 +1,4 @@
+import React from 'react';
 import './WelcomeComp.css';
 
 function WelcomeComp({nombreUsuario}) {
