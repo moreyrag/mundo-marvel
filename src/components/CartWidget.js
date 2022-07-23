@@ -6,7 +6,7 @@ import {CartContext} from './store/CartContext';
 import carrito from '../assets/cartIcono.png';
 import './CartWidget.css';
 
-function CartWidget(/*{cantidadArticulos}*/) {
+function CartWidget() {
     const { getCantidadTotal } = useContext(CartContext)
     let cantidadArticulos = getCantidadTotal()
     return (
@@ -25,7 +25,6 @@ function CartWidget(/*{cantidadArticulos}*/) {
                                 </Col>
                             </Row>
                         </Container>
-                        {/*<span className="cantidadArticulos">{cantidadArticulos}</span>*/}
                     </>
                 }
 

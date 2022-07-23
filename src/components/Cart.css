@@ -5,7 +5,6 @@
     min-width: 100vw;
     flex-direction: column;
     flex-wrap: wrap;
-    /*align-items: center;*/
     align-content: center;
     padding: 2rem;
 }

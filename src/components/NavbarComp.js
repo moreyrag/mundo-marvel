@@ -34,9 +34,6 @@ function NavbarComp() {
                 <NavLink className="navA mx-2" to="/peliculas">Peliculas</NavLink>
               </Nav>
               <WelcomeComp nombreUsuario="Gustavo"/>
-              
-              {/*correccion: cantidadArticulos se va a tomar directamente con context en lugar de pasarlo por props*/}
-              {/*<CartWidget cantidadArticulos="2"/>*/}
               <CartWidget/>
             </Navbar.Collapse>
           </Container>
