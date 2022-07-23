@@ -1,8 +1,8 @@
-import { useParams } from 'react-router-dom';
 import React, { useEffect, useState} from 'react';
 import { Spinner } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 
-import {getFirestore, collection, getDocs, query, where, limit} from 'firebase/firestore'
+import {getFirestore, collection, getDocs, query, where} from 'firebase/firestore'
 
 import ItemlList from './ItemlList';
 import NotFound from './NotFound';
@@ -39,6 +39,7 @@ function ItemListContainer({titulo}) {
         const db = getFirestore()
         let mundoMarvelProds
         setLoading(true)
+        setError(null)
         
         let prods = []
 
@@ -47,17 +48,19 @@ function ItemListContainer({titulo}) {
                 if (categoriaFiltrar()==="todas") {
                     mundoMarvelProds = query(collection(db, "items"))
                 } else {
-                    mundoMarvelProds = query(collection(db, "items"), where("categoria", "==", categoriaFiltrar()), limit(10))
+                    mundoMarvelProds = query(collection(db, "items"), where("categoria", "==", categoriaFiltrar()))
                 }
 
                 getDocs(mundoMarvelProds).then((items)=>{
+                    if (items.size===0){
+                        throw new Error("Error obteniendo los productos del catálogo!!")
+                    }
                     prods = items.docs.map((item)=>item.data())
                     setProductos(prods)
                     setLoading(false)
                 }).catch(error=>{
-                    console.log(error)
-                    setLoading(false)
                     setError(error.message)
+                    setLoading(false)
                 })
             }
             ,2000)
@@ -104,12 +107,13 @@ function ItemListContainer({titulo}) {
                                 isLoading && 
                                     <Spinner animation="border" role="status"/>
                             }
-                            {
-                                newError &&
-                                    <p>{newError}</p>
+                            
+                            {newError !==null &&
+                                    newError}
+    
+                            { !isLoading &&
+                                <ItemlList productos={productos}/>
                             }
-
-                            <ItemlList productos={productos}/>
                         </div>
                     </main>
                     <footer></footer>

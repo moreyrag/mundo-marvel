@@ -6,3 +6,7 @@
     min-height: 100vh;
     min-width: 100%;
 }
+
+a:hover, a.active{
+    text-decoration: none;
+}

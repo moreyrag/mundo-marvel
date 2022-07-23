@@ -1,17 +1,13 @@
-import Card from 'react-bootstrap/Card';
-import { Button, Container, Row} from 'react-bootstrap';
 import React from 'react';
+import { Button, Container, Row, Card} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+
 import './Item.css'
 
 function Item({producto}) {
     return (
         <Card
-            // bg={'primary'}
             key={producto.id}
-            // text={'white'}
-            // {style={{ width: '15rem'}}}
-            style={{ width: '25%'}}
             className="mb-2 mx-2 cardMundoMarvel"
             >
                 <Card.Header>

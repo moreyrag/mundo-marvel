@@ -6,6 +6,10 @@
 }
 
 .imagenCartItem{
-    width: 30%;
-    height: 30%;
+    width: 80%;
+    height: 80%;
+}
+
+a{
+    text-decoration: none;
 }

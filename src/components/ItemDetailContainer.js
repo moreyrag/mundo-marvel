@@ -1,6 +1,7 @@
-import { useParams } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Spinner } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
+
 import {getFirestore, collection, getDocs, query, where} from 'firebase/firestore'
 
 import ItemDetail from './ItemDetail';

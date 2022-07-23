@@ -1,20 +1,32 @@
-import {Button, Image} from 'react-bootstrap';
+import {Button, Container, Image, Row, Col} from 'react-bootstrap';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import './CartItem.css'
 import { CartContext } from './store/CartContext';
+import './CartItem.css'
 
 function CartItem({producto}) {
     const {removeItem} = useContext(CartContext)
     return (
-        <tr>
-            <td><Image src={producto.producto.imagenBig} className="mt-2 mb-2 imagenCartItem"></Image></td>
-            <td>{producto.producto.titulo}</td>
-            <td>{producto.producto.precio}</td>
-            <td>{producto.cantidad}</td>
-            <td><Link to={`/detalles/${producto.producto.id}`}> <Button size="sm" variant="warning" className='mb-1 mt-2'>Detalles</Button> </Link></td>
-            <td><Button size="sm" variant="danger" className='mb-1 mt-2' onClick={()=>removeItem(producto.producto.id)}>Eliminar</Button></td>
-        </tr>
+       <Container>
+        <Row>
+            <Col>
+                <Image src={producto.producto.imagenBig} className="mt-2 mb-2 imagenCartItem"></Image>
+            </Col>
+            <Col>
+                {producto.producto.titulo}
+            </Col>
+            <Col>
+                U$S {producto.producto.precio}
+            </Col>
+            <Col>
+                # {producto.cantidad}
+            </Col>
+            <Col>
+                <Button size="sm" variant="danger" className='mb-1 mt-2' onClick={()=>removeItem(producto.producto.id)}>Eliminar</Button>
+                <Link to={`/detalles/${producto.producto.id}`}> <Button size="sm" variant="warning" className='mb-1 mt-2'>Detalles</Button> </Link>
+            </Col>
+        </Row>
+       </Container>
     );
 }
 

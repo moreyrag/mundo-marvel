@@ -1,12 +1,24 @@
 .contenedorCarrito{
     background: linear-gradient(#cbcdd5, #9198e5);
-    display: flex !important;
-    justify-content: center !important;
+    display: flex;
     min-height: 100vh;
     min-width: 100vw;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /*align-items: center;*/
+    align-content: center;
+    padding: 2rem;
 }
 
 .mensajeCarritoVacio{
     display: flex !important;
+    justify-content: center !important;
+}
+
+.filaItemsCarrito .row{
+    align-items: center !important;
+}
+
+.botonesCarrito{
     justify-content: center !important;
 }

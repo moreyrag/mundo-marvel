@@ -1,9 +1,9 @@
 import React from 'react';
 import {Container, Nav, Navbar} from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 import logo from '../assets/logoMarvel.svg';
 import WelcomeComp from './WelcomeComp';
 import CartWidget from './CartWidget';
-import { NavLink } from 'react-router-dom';
 import './NavbarComp.css';
 
 
